@@ -1,0 +1,29 @@
+{
+  "name": "primary-color",
+  "version": "0.0.1",
+  "description": "Primary Color Extractor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server -c configs/bs-config.json"
+  },
+  "author": "Louis Bourque",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/louisbourque/primary-color.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-html-replace": "^1.6.1",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-uglify": "^2.0.0"
+  }
+}
