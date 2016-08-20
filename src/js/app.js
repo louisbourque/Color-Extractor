@@ -2,6 +2,7 @@ var app = app || {};
 app.fileselect = document.getElementById("file-select-input");
 app.error = document.getElementById("error");
 app.output = document.getElementById("output");
+app.dropTarget = document.getElementById("filedrag");
 
 if (window.File && window.FileList && window.FileReader) {
   // file select
@@ -18,7 +19,7 @@ if (window.File && window.FileList && window.FileReader) {
 function FileDragHover(e) {
 	e.stopPropagation();
 	e.preventDefault();
-	e.target.className = (e.type == "dragover" ? "hover" : "");
+	app.dropTarget.className = (e.type == "dragover" ? "hover" : "");
 }
 
 // file selection
@@ -72,6 +73,6 @@ function getImageHTML(imageDataURI){
 }
 
 function getImageDetails(imageElement){
-  console.log(imageElement);
+  var colors = getPalette(imageElement);
   return 'Height: '+imageElement.height+' Width: '+imageElement.width;
 }
