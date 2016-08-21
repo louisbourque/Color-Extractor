@@ -2,7 +2,7 @@
 function getPalette(image){
 
   var quality = 5;
-  var colorCount = 10;
+  var colorCount = 14;
   var canvas  = document.createElement('canvas');
   var context = canvas.getContext('2d');
 
