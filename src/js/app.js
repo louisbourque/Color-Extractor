@@ -13,6 +13,8 @@ if (window.File && window.FileList && window.FileReader) {
   document.addEventListener("dragleave", FileDragHover, false);
   document.addEventListener("drop", FileSelectHandler, false);
   document.getElementById("filedrag").style.display = "block";
+
+  live('button.copy-button', 'click', function(e){ copyTextToClipboard(e.target.getAttribute('data-hex')); });
 }
 
 // file drag hover
