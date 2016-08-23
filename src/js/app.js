@@ -86,10 +86,7 @@ function getImageDetails(imageElement){
 }
 
 function colorArrayToHex(array){
-  var hex = array[0] < 16 ? '0'+array[0].toString(16) : array[0].toString(16);
-  hex += array[1] < 16 ? '0'+array[1].toString(16) : array[1].toString(16);
-  hex += array[2] < 16 ? '0'+array[2].toString(16) : array[2].toString(16);
-  return '#'+hex;
+  return array.reduce(function(hexSoFar, num){ return hexSoFar + (num < 16 ? '0'+num.toString(16) : num.toString(16)) }, '#');
 }
 
 function getBrightness(color){
