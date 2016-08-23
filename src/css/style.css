@@ -1,7 +1,12 @@
 body{
   text-align: center;
 }
-
+.info{
+  text-align: left;
+  width:60%;
+  max-width: 600px;
+  margin: auto;
+}
 #error{
   color:red;
   font-weight: bold;
