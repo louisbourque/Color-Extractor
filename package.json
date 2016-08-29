@@ -13,8 +13,7 @@
     "url": "git+https://github.com/louisbourque/primary-color.git"
   },
   "license": "ISC",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.12",
@@ -23,6 +22,7 @@
     "gulp-eslint": "^3.0.1",
     "gulp-html-replace": "^1.6.1",
     "gulp-imagemin": "^3.0.3",
+    "gulp-inline": "^0.1.1",
     "gulp-minify-html": "^1.0.6",
     "gulp-uglify": "^2.0.0"
   }
