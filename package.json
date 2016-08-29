@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/louisbourque/primary-color.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",
