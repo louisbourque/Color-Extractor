@@ -1,5 +1,5 @@
 
-function getPalette(image,section){
+function getPalette(image){
 
   var quality = 5;
   var colorCount = 14;
@@ -13,12 +13,7 @@ function getPalette(image,section){
 
   context.drawImage(image, 0, 0, width, height);
 
-  var pixels;
-  if(typeof(section)!= 'undefined'){
-    pixels = context.getImageData(Math.floor((width/4)*section), 0, Math.floor(width/4), height).data;
-  }else{
-    pixels = context.getImageData(0, 0, width, height).data;
-  }
+  var pixels = context.getImageData(0, 0, width, height).data;
   var pixelCount = width * height;
 
   // Store the RGB values in an array format suitable for quantize function
@@ -49,6 +44,51 @@ function getPalette(image,section){
 
 
 }
+
+function getPalletAverage(image,section){
+
+  var quality = 5;
+  var colorCount = 14;
+  var canvas  = document.createElement('canvas');
+  var context = canvas.getContext('2d');
+
+  document.body.appendChild(canvas);
+
+  var width  = canvas.width  = image.width;
+  var height = canvas.height = image.height;
+
+  context.drawImage(image, 0, 0, width, height);
+
+  var pixels;
+  if(typeof(section)!= 'undefined'){
+    pixels = context.getImageData(Math.floor((width/4)*section), 0, Math.floor(width/4), height).data;
+  }else{
+    pixels = context.getImageData(0, 0, width, height).data;
+  }
+
+  var length = pixels.length;
+  var i = -4;
+  var count = 0;
+  var avg = {r:0,g:0,b:0};
+  while ( (i += quality * 4) < length ) {
+      ++count;
+      avg.r += pixels[i];
+      avg.g += pixels[i+1];
+      avg.b += pixels[i+2];
+  }
+
+  // ~~ used to floor values
+  avg.r = Math.floor(avg.r/count);
+  avg.g = Math.floor(avg.g/count);
+  avg.b = Math.floor(avg.b/count);
+
+  // Clean up
+  canvas.parentNode.removeChild(canvas);
+
+  return [avg.r,avg.g,avg.b];
+
+}
+
 
 /*!
  * quantize.js Copyright 2008 Nick Rabinowitz.
