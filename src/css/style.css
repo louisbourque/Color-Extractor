@@ -106,7 +106,22 @@ body{
 .color-block-inner > button{
   padding-left: 0.5em;
 }
+.color-background-gradient{
+  text-align: left;
+  line-height: 1.5em;
+  text-indent: -2em;
+  padding-left: 4em;
+  color:#fff;
+  text-shadow: 0px 0px 2px #000;
+  font-weight: bold;
+}
 
+.color-background-gradient button{
+  float: right;
+  position: relative;
+  right: -1.5em;
+  top: 0.5em;
+}
 
 button {
 	margin: 0;

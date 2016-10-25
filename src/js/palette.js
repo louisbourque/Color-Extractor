@@ -1,5 +1,5 @@
 
-function getPalette(image){
+function getPalette(image,section){
 
   var quality = 5;
   var colorCount = 14;
@@ -13,7 +13,12 @@ function getPalette(image){
 
   context.drawImage(image, 0, 0, width, height);
 
-  var pixels     = context.getImageData(0, 0, width, height).data;
+  var pixels;
+  if(typeof(section)!= 'undefined'){
+    pixels = context.getImageData(Math.floor((width/4)*section), 0, Math.floor(width/4), height).data;
+  }else{
+    pixels = context.getImageData(0, 0, width, height).data;
+  }
   var pixelCount = width * height;
 
   // Store the RGB values in an array format suitable for quantize function
